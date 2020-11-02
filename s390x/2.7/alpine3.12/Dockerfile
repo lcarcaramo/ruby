@@ -1,4 +1,4 @@
-FROM s390x/ibmz/alpine:3.12
+FROM quay.io/ibmz/alpine:3.12
 
 RUN apk add --no-cache \
 		gmp-dev
