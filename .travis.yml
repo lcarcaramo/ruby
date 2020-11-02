@@ -1,0 +1,18 @@
+arch: s390x
+services:
+  - docker
+env:
+  global:
+    - TEST_DIR="$PWD/s390x/test/2.7/alpine3.12"
+    - TEST_SCRIPT="test.sh"
+    - BUILD_DIR="$PWD/s390x/2.7/alpine3.12"
+    - REPO="quay.io/ibmz/ruby"
+    - TAG="$REPO:2.7"
+before_script: 
+  - cd $TEST_DIR && chmod +x $TEST_SCRIPT
+  - docker login quay.io -u $ROBOT -p $ROBOT_TOKEN
+script: 
+  - docker build $BUILD_DIR --tag $TAG
+  - cd $TEST_DIR && bash $TEST_SCRIPT 
+# after_script:
+#   - docker push $REPO
