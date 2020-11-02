@@ -85,7 +85,6 @@ RUN set -eux; \
 		--build="$gnuArch" \
 		--disable-install-doc \
 		--enable-shared \
-		--no-async \
 	; \
 	make -j "$(nproc)"; \
 	make install; \
