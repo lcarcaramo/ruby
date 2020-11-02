@@ -36,7 +36,6 @@ RUN set -eux; \
 		libffi-dev \
 		libxml2-dev \
 		libxslt-dev \
-		libucontext \
 		linux-headers \
 		make \
 		ncurses-dev \
@@ -86,7 +85,6 @@ RUN set -eux; \
 		--build="$gnuArch" \
 		--disable-install-doc \
 		--enable-shared \
-		--with-libucontext \
 	; \
 	make -j "$(nproc)"; \
 	make install; \
