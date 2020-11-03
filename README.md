@@ -32,7 +32,7 @@ CMD ["ruby", "your-daemon-or-script.rb"]
 
 Put this file in the root of your app, next to the `Gemfile`.
 
-If you are running Ruby script(s) that do not have or require a Gemfile, you can just get rid of all code in Dockerfile that has anything to do with Gemfiles.
+If you are running Ruby script(s) that do not have or require a `Gemfile`, you can just get rid of all code in Dockerfile that has anything to do with a `Gemfile`.
 
 You can then build and run the Ruby image:
 
