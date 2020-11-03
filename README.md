@@ -15,7 +15,7 @@ Ruby is a dynamic, reflective, object-oriented, general-purpose, open-source pro
 ## Create a `Dockerfile` in your Ruby app project
 
 ```dockerfile
-FROM ruby:2.5
+FROM quay.io/ibmz/ruby:2.6
 
 # throw errors if Gemfile has been modified since Gemfile.lock
 RUN bundle config --global frozen 1
@@ -32,27 +32,13 @@ CMD ["./your-daemon-or-script.rb"]
 
 Put this file in the root of your app, next to the `Gemfile`.
 
+If you are running a Ruby script(s) that do not have or require a Gemfile, you can just get rid of all code in Dockfile that has anything to do with Gemfiles.
+
 You can then build and run the Ruby image:
 
 ```console
 $ docker build -t my-ruby-app .
 $ docker run -it --name my-running-script my-ruby-app
-```
-
-### Generate a `Gemfile.lock`
-
-The above example `Dockerfile` expects a `Gemfile.lock` in your app directory. This `docker run` will help you generate one. Run it in the root of your app, next to the `Gemfile`:
-
-```console
-$ docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app ruby:2.5 bundle install
-```
-
-## Run a single Ruby script
-
-For many simple, single file projects, you may find it inconvenient to write a complete `Dockerfile`. In such cases, you can run a Ruby script by using the Ruby Docker image directly:
-
-```console
-$ docker run -it --rm --name my-running-script -v "$PWD":/usr/src/myapp -w /usr/src/myapp ruby:2.5 ruby your-daemon-or-script.rb
 ```
 
 ## Encoding
