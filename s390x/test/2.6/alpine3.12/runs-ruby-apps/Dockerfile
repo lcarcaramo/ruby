@@ -10,4 +10,4 @@ RUN bundle install
 
 COPY . .
 
-CMD ["ruby" "test.rb"]
+CMD ["ruby", "test.rb"]
