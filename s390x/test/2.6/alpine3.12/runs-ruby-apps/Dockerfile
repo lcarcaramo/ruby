@@ -10,4 +10,5 @@ RUN bundle install
 
 COPY . .
 
+ENTRYPOINT ["#!/usr/local/bin/ruby"]
 CMD ["./test.rb"]
