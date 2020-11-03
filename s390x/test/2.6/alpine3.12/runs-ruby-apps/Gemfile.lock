@@ -1,13 +1,1 @@
-GEM
-  remote: https://rubygems.org/
-  specs:
-    colorize (0.8.1)
 
-PLATFORMS
-  s390x-linux
-
-DEPENDENCIES
-  colorize
-
-BUNDLED WITH
-   1.17.2
