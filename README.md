@@ -27,7 +27,7 @@ RUN bundle install
 
 COPY . .
 
-CMD ["./your-daemon-or-script.rb"]
+CMD ["ruby", "your-daemon-or-script.rb"]
 ```
 
 Put this file in the root of your app, next to the `Gemfile`.
