@@ -9,7 +9,7 @@ env:
     - REPO="quay.io/ibmz/ruby"
     - TAG="$REPO:2.6"
 before_script: 
-  - cd $TEST_DIR && chmod +x $TEST_SCRIPT
+  - cd $TEST_DIR && chmod +x $TEST_SCRIPT && chmod +x runs-ruby-apps/test.rb
   - docker login quay.io -u $ROBOT -p $ROBOT_TOKEN
 script: 
   - docker build $BUILD_DIR --tag $TAG
