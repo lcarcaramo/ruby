@@ -1,8 +1,10 @@
 # Tags
-> _Built from [`quay.io/ibmz/alpine:3.12`](https://quay.io/repository/ibmz/alpine?tab=info)_
--	[`2.6`](https://github.com/lcarcaramo/ruby/blob/master/s390x/2.6/alpine3.12/Dockerfile) - [![Build Status](https://travis-ci.com/lcarcaramo/ruby.svg?branch=master)](https://travis-ci.com/lcarcaramo/ruby)
+> _Built from [`quay.io/ibm/alpine:3.12`](https://quay.io/repository/ibm/alpine?tab=info)_
+-	`2.6` - [![Build Status](https://travis-ci.com/lcarcaramo/ruby.svg?branch=master)](https://travis-ci.com/lcarcaramo/ruby)
 
-# What is Ruby?
+### __[Original Source Code](https://github.com/docker-library/ruby)__
+
+# Ruby
 
 Ruby is a dynamic, reflective, object-oriented, general-purpose, open-source programming language. According to its authors, Ruby was influenced by Perl, Smalltalk, Eiffel, Ada, and Lisp. It supports multiple programming paradigms, including functional, object-oriented, and imperative. It also has a dynamic type system and automatic memory management.
 
@@ -15,7 +17,7 @@ Ruby is a dynamic, reflective, object-oriented, general-purpose, open-source pro
 ## Create a `Dockerfile` in your Ruby app project
 
 ```dockerfile
-FROM quay.io/ibmz/ruby:2.6
+FROM quay.io/ibm/ruby:2.6
 
 # throw errors if Gemfile has been modified since Gemfile.lock
 RUN bundle config --global frozen 1
